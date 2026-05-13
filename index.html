@@ -10,48 +10,99 @@
 
     body {
       margin: 0;
-      background: #0f0f0f;
       color: white;
       font-family: Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, #ff4ecd33, transparent 35%),
+        radial-gradient(circle at top right, #00d4ff33, transparent 35%),
+        linear-gradient(135deg, #090909, #151515);
     }
 
     nav {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(15, 15, 15, 0.95);
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(12px);
       padding: 1rem 5%;
       display: flex;
       justify-content: center;
       gap: 1rem;
       flex-wrap: wrap;
-      border-bottom: 1px solid #2a2a2a;
+      border-bottom: 1px solid #ffffff22;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      padding: 0.6rem 1rem;
+      padding: 0.65rem 1.1rem;
       border-radius: 999px;
-      background: #1a1a1a;
+      background: linear-gradient(135deg, #ff4ecd, #6c63ff);
       font-size: 0.95rem;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
-    nav a:hover { background: #333; }
+    nav a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px #ff4ecd55;
+    }
 
     header {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 1.5rem;
       text-align: center;
-      padding: 5rem 1.5rem 3rem;
     }
 
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
+    .hero-card {
+      max-width: 950px;
+      padding: 3rem;
+      border-radius: 32px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
+      animation: fadeUp 1s ease forwards;
     }
 
-    header p {
-      color: #bdbdbd;
-      font-size: 1.1rem;
+    .hero-card h1 {
+      font-size: clamp(3rem, 8vw, 6rem);
+      margin: 0;
+      background: linear-gradient(135deg, #ff4ecd, #00d4ff, #ffe66d);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .tagline {
+      font-size: 1.25rem;
+      color: #f1f1f1;
+      margin-top: 1rem;
+    }
+
+    .cv-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+      text-align: left;
+    }
+
+    .cv-box {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 1.2rem;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .cv-box h3 {
+      margin-top: 0;
+      color: #00d4ff;
+    }
+
+    .cv-box p {
+      color: #d8d8d8;
+      line-height: 1.5;
     }
 
     section {
@@ -62,12 +113,13 @@
     }
 
     h2 {
-      font-size: 2.4rem;
+      font-size: 2.6rem;
       margin-bottom: 0.5rem;
+      color: #ffe66d;
     }
 
     section > p {
-      color: #bdbdbd;
+      color: #d0d0d0;
       margin-bottom: 3rem;
       line-height: 1.6;
     }
@@ -81,22 +133,30 @@
 
     .video-card,
     .gallery-card {
-      background: #1a1a1a;
-      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 22px;
       overflow: hidden;
       padding: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .video-card:hover,
+    .gallery-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 45px rgba(0, 212, 255, 0.18);
     }
 
     .video-card iframe {
       width: 100%;
       aspect-ratio: 16 / 9;
       border: none;
-      border-radius: 12px;
+      border-radius: 14px;
     }
 
     .gallery-card img {
       width: 100%;
-      border-radius: 12px;
+      border-radius: 14px;
       display: block;
     }
 
@@ -104,11 +164,12 @@
     .gallery-card h3 {
       margin-top: 1rem;
       margin-bottom: 0.5rem;
+      color: #ff9ff3;
     }
 
     .video-card p,
     .gallery-card p {
-      color: #d0d0d0;
+      color: #d8d8d8;
       line-height: 1.5;
       font-size: 0.95rem;
       white-space: pre-line;
@@ -118,7 +179,29 @@
       text-align: center;
       padding: 3rem 1rem;
       color: #aaa;
-      border-top: 1px solid #2a2a2a;
+      border-top: 1px solid #ffffff22;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(35px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-card {
+        padding: 2rem 1.2rem;
+      }
+
+      nav a {
+        font-size: 0.85rem;
+        padding: 0.55rem 0.9rem;
+      }
     }
   </style>
 </head>
@@ -126,15 +209,40 @@
 <body>
 
 <nav>
+  <a href="#home">Home</a>
   <a href="#videos">Videos</a>
   <a href="#mobile">Mobile App</a>
   <a href="#website">Website</a>
   <a href="#storyboard">Storyboard / Adobe</a>
 </nav>
 
-<header>
-  <h1>Pranali Goswami</h1>
-  <p>Graphic Designer • Motion Graphics • 3D Animation • UI Design</p>
+<header id="home">
+  <div class="hero-card">
+    <h1>Pranali Goswami</h1>
+    <p class="tagline">Graphic Designer • Motion Graphics Artist • 3D Animation • UI Design</p>
+
+    <div class="cv-grid">
+      <div class="cv-box">
+        <h3>Profile</h3>
+        <p>Creative and detail-oriented designer focused on visual storytelling, branding, motion graphics, multimedia design, and digital experiences.</p>
+      </div>
+
+      <div class="cv-box">
+        <h3>Tools</h3>
+        <p>Adobe Photoshop, Illustrator, After Effects, Premiere Pro, Blender, UI Design, Video Editing, Motion Graphics.</p>
+      </div>
+
+      <div class="cv-box">
+        <h3>Education</h3>
+        <p>Computer Motion Graphics & 3D Animation, Mobile Application Development, and Bachelor of Information Technology.</p>
+      </div>
+
+      <div class="cv-box">
+        <h3>Experience</h3>
+        <p>Graphic Design & Animation Intern with experience creating branded visuals, motion assets, social media designs, and digital exhibition content.</p>
+      </div>
+    </div>
+  </div>
 </header>
 
 <section id="videos">
@@ -142,7 +250,6 @@
   <p>A selection of motion graphics, animation, and visual storytelling projects.</p>
 
   <div class="video-grid">
-
     <div class="video-card">
       <iframe src="https://www.youtube.com/embed/SriMgOtQpZs?si=966lKJ0xqXx7ObXP" allowfullscreen></iframe>
       <h3>Texture | 3D Animation</h3>
@@ -212,7 +319,6 @@ Tools Used: Blender, Adobe After Effects
 
 Design Goal: To develop advanced particle animation skills while creating visually dynamic transition effects and atmospheric digital compositions.</p>
     </div>
-
   </div>
 </section>
 
