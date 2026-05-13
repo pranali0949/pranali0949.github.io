@@ -1,19 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pranali Goswami Portfolio</title>
 
   <style>
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
-      padding: 0;
       background: #0f0f0f;
       color: white;
       font-family: Arial, sans-serif;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(15, 15, 15, 0.95);
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #2a2a2a;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.6rem 1rem;
+      border-radius: 999px;
+      background: #1a1a1a;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover { background: #333; }
+
+    header {
+      text-align: center;
+      padding: 5rem 1.5rem 3rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: #bdbdbd;
+      font-size: 1.1rem;
     }
 
     section {
@@ -24,22 +62,25 @@
     }
 
     h2 {
-      font-size: 2.5rem;
+      font-size: 2.4rem;
       margin-bottom: 0.5rem;
     }
 
-    section>p {
+    section > p {
       color: #bdbdbd;
       margin-bottom: 3rem;
+      line-height: 1.6;
     }
 
-    .video-grid {
+    .video-grid,
+    .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
     }
 
-    .video-card {
+    .video-card,
+    .gallery-card {
       background: #1a1a1a;
       border-radius: 18px;
       overflow: hidden;
@@ -48,36 +89,67 @@
 
     .video-card iframe {
       width: 100%;
-      aspect-ratio: 16/9;
+      aspect-ratio: 16 / 9;
       border: none;
       border-radius: 12px;
     }
 
-    .video-card h3 {
+    .gallery-card img {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+    }
+
+    .video-card h3,
+    .gallery-card h3 {
       margin-top: 1rem;
       margin-bottom: 0.5rem;
     }
 
-    .video-card p {
+    .video-card p,
+    .gallery-card p {
       color: #d0d0d0;
       line-height: 1.5;
+      font-size: 0.95rem;
+      white-space: pre-line;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: #aaa;
+      border-top: 1px solid #2a2a2a;
     }
   </style>
 </head>
 
 <body>
 
+<nav>
+  <a href="#videos">Videos</a>
+  <a href="#mobile">Mobile App</a>
+  <a href="#website">Website</a>
+  <a href="#storyboard">Storyboard / Adobe</a>
+</nav>
 
-<section>
+<header>
+  <h1>Pranali Goswami</h1>
+  <p>Graphic Designer • Motion Graphics • 3D Animation • UI Design</p>
+</header>
+
+<section id="videos">
   <h2>Motion Graphics Portfolio</h2>
   <p>A selection of motion graphics, animation, and visual storytelling projects.</p>
 
   <div class="video-grid">
+
     <div class="video-card">
       <iframe src="https://www.youtube.com/embed/SriMgOtQpZs?si=966lKJ0xqXx7ObXP" allowfullscreen></iframe>
       <h3>Texture | 3D Animation</h3>
       <p>Description: A texture-focused 3D animation study exploring material surfaces, lighting interaction, and motion within a minimal digital environment.
+
 Tools Used: Blender
+
 Design Goal: To demonstrate understanding of material rendering, texture detailing, lighting behavior, and object animation in 3D space.</p>
     </div>
 
@@ -85,53 +157,142 @@ Design Goal: To demonstrate understanding of material rendering, texture detaili
       <iframe src="https://www.youtube.com/embed/VpXrz6rqkpA?si=mpOfaqMnSeVFXeJ4" allowfullscreen></iframe>
       <h3>3D Motion | Motion Graphics</h3>
       <p>Description: A cinematic 3D motion graphics piece exploring atmosphere, composition, and environmental storytelling through smooth camera movement and immersive visual pacing.
+
 Tools Used: Blender, Adobe After Effects, Adobe Premiere Pro
+
 Design Goal: To create a visually calming and cinematic experience while demonstrating skills in 3D composition, lighting, motion flow, and scene rendering.</p>
     </div>
 
-     <div class="video-card">
+    <div class="video-card">
       <iframe src="https://www.youtube.com/embed/MdW6c54Tb2w?si=SbJ56QNn2KwXPyNb" allowfullscreen></iframe>
-      <h3>Beer Advertisement |  Motion Graphics</h3>
+      <h3>Beer Advertisement | Motion Graphics</h3>
       <p>Description: A short-form commercial animation designed to highlight product visibility using bold typography, vibrant color contrast, and dynamic product motion.
+
 Tools Used: Adobe After Effects, Blender, Adobe Illustrator
+
 Design Goal: To produce an engaging promotional advertisement focused on product presentation, motion timing, and modern commercial visual design.</p>
     </div>
 
-     <div class="video-card">
+    <div class="video-card">
       <iframe src="https://www.youtube.com/embed/FbGx7ZvMLg8?si=WfUGd84GKDvEYiPN" allowfullscreen></iframe>
-      <h3>Astronot</h3>
+      <h3>Astronaut | Motion Graphics</h3>
       <p>Description: A conceptual motion graphics project combining minimal environments and character animation to create a futuristic visual sequence.
+
 Tools Used: Blender, Adobe After Effects
+
 Design Goal: To experiment with cinematic framing, movement, and visual storytelling within a science-fiction inspired motion design concept.</p>
     </div>
 
-      <div class="video-card">
+    <div class="video-card">
       <iframe src="https://www.youtube.com/embed/ZO34BDlbejQ?si=3qAB-9IC7mDXsE6Z" allowfullscreen></iframe>
-      <h3>Twilling Garden</h3>
+      <h3>Twilling Garden | Digital Installation</h3>
       <p>Description: An immersive digital installation project developed for a multimedia exhibition environment, featuring animated visual elements and atmospheric composition.
+
 Tools Used: Adobe After Effects, Blender, Adobe Photoshop
+
 Design Goal: To create an engaging visual storytelling experience that blends motion graphics and environmental design for exhibition-based presentation.</p>
     </div>
 
-     <div class="video-card">
+    <div class="video-card">
       <iframe src="https://www.youtube.com/embed/yxxSDrGgMUg?si=cRKbw4tnpm8AhgtG" allowfullscreen></iframe>
       <h3>Pyro Fluidink | 3D Animation</h3>
       <p>Description: A fluid and particle simulation project experimenting with abstract volumetric motion and dynamic color interactions.
+
 Tools Used: Blender, Adobe After Effects
+
 Design Goal: To explore procedural simulation techniques and create visually expressive motion through fluid dynamics and particle-based animation.</p>
     </div>
-    
-  <div class="video-card">
+
+    <div class="video-card">
       <iframe src="https://www.youtube.com/embed/tpRJ8O3o204?si=rbeeWw5o9sPW1McJ" allowfullscreen></iframe>
-      <h3>Partical Dissolve | 3D Animation</h3>
+      <h3>Particle Dissolve | 3D Animation</h3>
       <p>Description: A particle-based animation sequence featuring organic dissolve effects and abstract motion transitions using layered simulation techniques.
+
 Tools Used: Blender, Adobe After Effects
+
 Design Goal: To develop advanced particle animation skills while creating visually dynamic transition effects and atmospheric digital compositions.</p>
     </div>
 
-  
-    
   </div>
 </section>
+
+<section id="mobile">
+  <h2>Mobile App Design</h2>
+  <p>Mobile interface design projects focused on user flow, clean layouts, and app-based visual experience.</p>
+
+  <div class="gallery-grid">
+    <div class="gallery-card"><img src="Images/MobileApp/1.png" alt="Mobile App Design 1"><h3>Mobile App Screen</h3><p>UI screen design focused on mobile layout, visual hierarchy, and clean user interaction.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/2.png" alt="Mobile App Design 2"><h3>Mobile App Screen</h3><p>Mobile interface concept exploring app navigation, spacing, and usability.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/3.png" alt="Mobile App Design 3"><h3>Mobile App Screen</h3><p>App design screen created to support a consistent and user-friendly digital experience.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/4.png" alt="Mobile App Design 4"><h3>Mobile App Screen</h3><p>Mobile UI layout demonstrating clean structure, readable content, and modern visual styling.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/5.png" alt="Mobile App Design 5"><h3>Mobile App Screen</h3><p>Interface design focused on screen composition, usability, and visual consistency.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/6.JPG" alt="Mobile App Design 6"><h3>Mobile App Screen</h3><p>Mobile app concept designed with attention to layout, user flow, and visual presentation.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/7.png" alt="Mobile App Design 7"><h3>Mobile App Screen</h3><p>App screen design exploring content placement, interaction flow, and clean UI structure.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/8.png" alt="Mobile App Design 8"><h3>Mobile App Screen</h3><p>Mobile interface visual created to demonstrate app-based design thinking and usability.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/9.JPG" alt="Mobile App Design 9"><h3>Mobile App Screen</h3><p>UI concept focused on mobile-friendly structure, spacing, and design clarity.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/11.JPG" alt="Mobile App Design 11"><h3>Mobile App Screen</h3><p>App screen created to show consistent styling, interface organization, and modern design.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/12.png" alt="Mobile App Design 12"><h3>Mobile App Screen</h3><p>Mobile screen design focused on simple navigation and polished visual hierarchy.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/13.png" alt="Mobile App Design 13"><h3>Mobile App Screen</h3><p>Interface design demonstrating structured content, usability, and clean digital presentation.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/14.JPG" alt="Mobile App Design 14"><h3>Mobile App Screen</h3><p>Mobile design concept focused on layout balance, user flow, and visual consistency.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/15.png" alt="Mobile App Design 15"><h3>Mobile App Screen</h3><p>App screen layout created to support clear user interaction and modern interface design.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/AboutPage.png" alt="About Page"><h3>About Page</h3><p>Informational mobile screen designed with clean structure and readable content flow.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/BookPage.png" alt="Book Page"><h3>Book Page</h3><p>Mobile page design focused on organized information and user-centered layout.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/DetailPage.png" alt="Detail Page"><h3>Detail Page</h3><p>Detail screen concept designed for clear content presentation and smooth user flow.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/FeedBackPage.png" alt="Feedback Page"><h3>Feedback Page</h3><p>Feedback interface designed for simple interaction and accessible form layout.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/ForgotPage.png" alt="Forgot Page"><h3>Forgot Password Page</h3><p>Account recovery screen focused on clarity, simplicity, and user guidance.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/HomePage.png" alt="Home Page"><h3>Home Page</h3><p>Main app screen designed to establish visual direction, navigation, and usability.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/s1.png" alt="Mobile App Screen"><h3>Mobile App Screen</h3><p>Additional mobile interface concept exploring screen flow and visual consistency.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/s2.png" alt="Mobile App Screen"><h3>Mobile App Screen</h3><p>Supporting app screen designed with focus on usability and clean layout.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/s3.png" alt="Mobile App Screen"><h3>Mobile App Screen</h3><p>Mobile UI concept demonstrating structured layout and design consistency.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/s4.png" alt="Mobile App Screen"><h3>Mobile App Screen</h3><p>App screen design focused on content organization and smooth visual flow.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/s5.png" alt="Mobile App Screen"><h3>Mobile App Screen</h3><p>Mobile interface screen designed to support clean interaction and modern styling.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/s6.png" alt="Mobile App Screen"><h3>Mobile App Screen</h3><p>UI screen concept exploring app structure, spacing, and user experience.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/s7.png" alt="Mobile App Screen"><h3>Mobile App Screen</h3><p>Mobile design screen focused on visual clarity and consistent interface style.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/s8.png" alt="Mobile App Screen"><h3>Mobile App Screen</h3><p>Additional app screen created to demonstrate mobile-first design thinking.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/SettingPage.png" alt="Setting Page"><h3>Settings Page</h3><p>Settings interface designed for simple navigation, clear options, and usability.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/SignupPage.JPG" alt="Signup Page"><h3>Signup Page</h3><p>Account registration screen focused on clean form design and user onboarding.</p></div>
+    <div class="gallery-card"><img src="Images/MobileApp/StartPage.png" alt="Start Page"><h3>Start Page</h3><p>Opening app screen designed to establish first impression and visual direction.</p></div>
+  </div>
+</section>
+
+<section id="website">
+  <h2>Website Design</h2>
+  <p>Website layout and interface concepts focused on branding, structure, visual hierarchy, and digital presentation.</p>
+
+  <div class="gallery-grid">
+    <div class="gallery-card"><img src="Images/website/1.png" alt="Website Design 1"><h3>Website Design Concept</h3><p>Website screen focused on layout structure, brand presentation, and visual hierarchy.</p></div>
+    <div class="gallery-card"><img src="Images/website/2.png" alt="Website Design 2"><h3>Website Design Concept</h3><p>Web interface layout exploring clean composition, spacing, and content organization.</p></div>
+    <div class="gallery-card"><img src="Images/website/3.png" alt="Website Design 3"><h3>Website Design Concept</h3><p>Website page design focused on user-friendly structure and polished visual presentation.</p></div>
+    <div class="gallery-card"><img src="Images/website/4.png" alt="Website Design 4"><h3>Website Design Concept</h3><p>Digital layout concept demonstrating balance, typography, and clean interface design.</p></div>
+    <div class="gallery-card"><img src="Images/website/5.png" alt="Website Design 5"><h3>Website Design Concept</h3><p>Website screen created to show consistent branding, layout flow, and usability.</p></div>
+    <div class="gallery-card"><img src="Images/website/6.png" alt="Website Design 6"><h3>Website Design Concept</h3><p>Web design layout focused on visual clarity, structure, and digital storytelling.</p></div>
+    <div class="gallery-card"><img src="Images/website/7.png" alt="Website Design 7"><h3>Website Design Concept</h3><p>Website interface created with attention to modern styling and organized content flow.</p></div>
+    <div class="gallery-card"><img src="Images/website/8.png" alt="Website Design 8"><h3>Website Design Concept</h3><p>Web layout concept exploring hierarchy, spacing, and professional digital presentation.</p></div>
+    <div class="gallery-card"><img src="Images/website/9.png" alt="Website Design 9"><h3>Website Design Concept</h3><p>Website screen focused on clean UI structure and consistent visual direction.</p></div>
+    <div class="gallery-card"><img src="Images/website/11.png" alt="Website Design 11"><h3>Website Design Concept</h3><p>Interface layout designed to support strong visual communication and readability.</p></div>
+    <div class="gallery-card"><img src="Images/website/12.png" alt="Website Design 12"><h3>Website Design Concept</h3><p>Website page concept focused on structured content and refined visual balance.</p></div>
+    <div class="gallery-card"><img src="Images/website/21.png" alt="Website Design 21"><h3>Website Design Concept</h3><p>Additional web screen demonstrating layout consistency and brand-focused presentation.</p></div>
+    <div class="gallery-card"><img src="Images/website/22.png" alt="Website Design 22"><h3>Website Design Concept</h3><p>Website interface concept built around clear navigation, spacing, and visual hierarchy.</p></div>
+    <div class="gallery-card"><img src="Images/website/23.png" alt="Website Design 23"><h3>Website Design Concept</h3><p>Web page design showing clean composition, interface structure, and digital polish.</p></div>
+  </div>
+</section>
+
+<section id="storyboard">
+  <h2>Storyboard, Branding & Adobe Design</h2>
+  <p>Visual design work including storyboard frames, logo concepts, branding assets, and Adobe-based creative compositions.</p>
+
+  <div class="gallery-grid">
+    <div class="gallery-card"><img src="Images/adobe/10.JPG" alt="Adobe Design"><h3>Adobe Design Composition</h3><p>Creative visual composition focused on layout, color, and polished graphic presentation.</p></div>
+    <div class="gallery-card"><img src="Images/adobe/beautylogo.png" alt="Beauty Logo"><h3>Beauty Logo Design</h3><p>Logo concept exploring brand identity, elegance, and clean visual recognition.</p></div>
+    <div class="gallery-card"><img src="Images/adobe/logo.png" alt="Logo Design"><h3>Logo Design</h3><p>Brand mark design focused on simplicity, visual identity, and professional presentation.</p></div>
+    <div class="gallery-card"><img src="Images/adobe/ngo.png" alt="NGO Logo"><h3>NGO Logo Design</h3><p>Logo concept created to support meaningful branding and recognizable visual communication.</p></div>
+    <div class="gallery-card"><img src="Images/adobe/Pranali_story-1.jpg" alt="Storyboard"><h3>Storyboard Design</h3><p>Storyboard visual created to plan scene composition, narrative flow, and visual storytelling.</p></div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Pranali Goswami — Graphic Design, Motion Graphics & Visual Design Portfolio</p>
+</footer>
+
 </body>
 </html>
